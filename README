@@ -1,4 +1,4 @@
 merb_paperclip
 ==============
 
-A plugin for the Merb framework that provides ...
+A Merb plugin that is essentially a port of Jon Yurek's paperclip. For Merb + ActiveRecord only.

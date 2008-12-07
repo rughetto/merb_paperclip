@@ -6,10 +6,10 @@ require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb_paperclip"
 GEM_VERSION = "0.9.12"
-AUTHOR = "Your Name"
-EMAIL = "Your Email"
-HOMEPAGE = "http://merbivore.com/"
-SUMMARY = "Merb plugin that provides ..."
+AUTHOR = "Jeremy Durham"
+EMAIL = "jeremydurham@gmail.com"
+HOMEPAGE = "http://www.thoughtbot.com/projects/paperclip/"
+SUMMARY = "A Merb plugin that is essentially a port of Jon Yurek's paperclip"
 
 spec = Gem::Specification.new do |s|
   s.rubyforge_project = 'merb'
@@ -23,7 +23,7 @@ spec = Gem::Specification.new do |s|
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
-  s.add_dependency('merb', '>= 1.0.1')
+  s.add_dependency('merb', '>= 1.0')
   s.require_path = 'lib'
   s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec}/**/*")
   
