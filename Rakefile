@@ -1,20 +1,19 @@
 require 'rubygems'
 require 'rake/gempackagetask'
-require 'rubygems/specification'
-require 'date'
-require 'merb-core/version'
-require 'merb-core/tasks/merb_rake_helper'
 
-NAME = "merb_paperclip"
-GEM_VERSION = "0.9.4"
-AUTHOR = "Jeremy Durham"
-EMAIL = "jeremydurham@gmail.com"
-HOMEPAGE = "http://rubyforge.org/projects/merb_paperclip/"
-SUMMARY = "A Merb plugin that is essentially a port of Jon Yurek's paperclip"
+require 'merb-core'
+require 'merb-core/tasks/merb'
+
+GEM_NAME = "merb_paperclip"
+GEM_VERSION = "0.9.12"
+AUTHOR = "Your Name"
+EMAIL = "Your Email"
+HOMEPAGE = "http://merbivore.com/"
+SUMMARY = "Merb plugin that provides ..."
 
 spec = Gem::Specification.new do |s|
   s.rubyforge_project = 'merb'
-  s.name = NAME
+  s.name = GEM_NAME
   s.version = GEM_VERSION
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true
@@ -24,7 +23,7 @@ spec = Gem::Specification.new do |s|
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
-  s.add_dependency('merb', '>= 0.9.4')
+  s.add_dependency('merb', '>= 1.0.1')
   s.require_path = 'lib'
   s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec}/**/*")
   
@@ -34,23 +33,19 @@ Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
 
-desc "install the plugin locally"
-task :install => [:package] do
-  sh %{#{sudo} gem install #{install_home} pkg/#{NAME}-#{GEM_VERSION} --no-update-sources}
+desc "install the plugin as a gem"
+task :install do
+  Merb::RakeHelper.install(GEM_NAME, :version => GEM_VERSION)
 end
 
-desc "create a gemspec file"
-task :make_spec do
-  File.open("#{NAME}.gemspec", "w") do |file|
+desc "Uninstall the gem"
+task :uninstall do
+  Merb::RakeHelper.uninstall(GEM_NAME, :version => GEM_VERSION)
+end
+
+desc "Create a gemspec file"
+task :gemspec do
+  File.open("#{GEM_NAME}.gemspec", "w") do |file|
     file.puts spec.to_ruby
   end
-end
-
-namespace :jruby do
-
-  desc "Run :package and install the resulting .gem with jruby"
-  task :install => :package do
-    sh %{#{sudo} jruby -S gem install #{install_home} pkg/#{NAME}-#{GEM_VERSION}.gem --no-rdoc --no-ri}
-  end
-
 end
