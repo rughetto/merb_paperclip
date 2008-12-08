@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README", "LICENSE", "TODO"]
   s.files = ["LICENSE", "README", "Rakefile", "TODO", "lib/generators", "lib/generators/paperclip_generator.rb", "lib/generators/templates", "lib/generators/templates/%file_name%.rb", "lib/merb_paperclip", "lib/merb_paperclip/merbtasks.rb", "lib/merb_paperclip.rb", "lib/paperclip", "lib/paperclip/attachment.rb", "lib/paperclip/geometry.rb", "lib/paperclip/iostream.rb", "lib/paperclip/storage.rb", "lib/paperclip/thumbnail.rb", "lib/paperclip/upfile.rb", "lib/paperclip.rb", "spec/merb_paperclip_spec.rb", "spec/spec_helper.rb"]
   s.has_rdoc = true
-  s.homepage = %q{http://rubyforge.org/projects/merb_paperclip/}
+  s.homepage = %q{http://www.thoughtbot.com/projects/paperclip/}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{merb}
   s.rubygems_version = %q{1.3.1}
