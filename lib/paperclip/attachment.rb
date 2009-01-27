@@ -74,8 +74,8 @@ module Paperclip
 
       logger.info("[paperclip] Writing attributes for #{name}")
       @queued_for_write[:original]        = uploaded_file['tempfile']
-      @instance[:"#{@name}_file_name"]    = uploaded_file['tempfile'].original_filename.strip.gsub /[^\w\d\.\-]+/, '_'
-      @instance[:"#{@name}_content_type"] = uploaded_file['tempfile'].content_type.strip
+      @instance[:"#{@name}_file_name"]    = uploaded_file['filename'].strip.gsub /[^\w\d\.\-]+/, '_'
+      @instance[:"#{@name}_content_type"] = uploaded_file['content_type'].strip
       @instance[:"#{@name}_file_size"]    = uploaded_file['tempfile'].size.to_i
       @instance[:"#{@name}_updated_at"]   = Time.now
 
