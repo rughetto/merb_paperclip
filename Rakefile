@@ -5,7 +5,7 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb_paperclip"
-GEM_VERSION = "0.9.12"
+GEM_VERSION = "0.9.13"
 AUTHOR = "Jeremy Durham"
 EMAIL = "jeremydurham@gmail.com"
 HOMEPAGE = "http://www.thoughtbot.com/projects/paperclip/"
